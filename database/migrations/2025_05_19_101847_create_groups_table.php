@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->integer('user');
             $table->string('name')->unique();
-            $table->string('description')->nullable();f
+            $table->string('description')->nullable();
         });
     }
 
-    /**
+    /**git 
      * Reverse the migrations.
      */
     public function down(): void
