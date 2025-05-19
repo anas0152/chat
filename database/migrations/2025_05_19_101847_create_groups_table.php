@@ -13,9 +13,12 @@ return new class extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->id();
-            $table->integer('user');
+            $table->nb_integer('user');
+
             $table->string('name')->unique();
             $table->string('description')->nullable();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });
     }
 
